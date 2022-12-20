@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    WEBHOOK_URL = 'https://hooks.slack.com/services/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'
+
   def index
     @users = User.all
   end
