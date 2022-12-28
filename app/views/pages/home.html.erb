@@ -1,0 +1,20 @@
+# <script>
+#   alert("らっしゃい!");
+# </script>
+<h1>HelloWorld</h1>
+
+<div class="users"></div>
+
+<script>
+fetch('http://127.0.0.1:3000/users')
+  .then((response) => response.json())
+  .then((data) => {
+    let div = document.querySelector('div');
+    let age = document.getElementById('age');
+    data.users.forEach(user => {
+      console.log(div)
+      console.log(user)
+    })
+  });
+</script>
+

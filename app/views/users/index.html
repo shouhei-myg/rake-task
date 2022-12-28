@@ -1,0 +1,61 @@
+<form action="/" method="post">
+  <ul class="form_count" id="form_list">
+   <li class="increment_forms">
+     <label for="name1">Name:</label>
+     <input type="text" id="name1" name="user_name">
+   </li>
+   <li>
+     <label for="mail1">E-mail:</label>
+     <input type="email" id="mail1" name="user_email">
+   </li>
+   <li>
+     <label for="msg1">Message:</label>
+     <textarea id="msg1" name="user_message"></textarea>
+   </li>
+  </ul>
+   <div class = "add_form_btn" id = "add_form_btn">フォームを追加する</div>
+ </form>
+
+ <script>
+ function addForm(){
+  // let input_html = '<li><label for="name1">Name:</label><input type="text" id="name1" name="user_name"></li><li><label for="mail1">E-mail:</label><input type="email" id="mail1" name="user_email"></li><li><label for="msg1">Message:</label><textarea id="msg1" name="user_message"></textarea></li>'
+  let input_html = 'o'
+  console.log(input_html);
+  let form_list = document.getElementById("form_list")
+  console.log(form_list);
+  form_list.insertAdjacentHTML('beforeend', input_html);
+}
+
+document.getElementById("add_form_btn").addEventListener("click", addForm, false)
+</script>
+
+
+
+<form action="/" method="post">
+  <ul class="form_count" id="form_list"></ul>
+   <div class = "add_form_btn" id = "add_form_btn">フォームを追加する</div>
+ </form>
+ <script type="text/html" id="input_html">
+  <li class="increment_forms">
+    <label for="name1">Name:</label>
+    <input type="text" id="name1" name="user_name">
+  </li>
+  <li>
+    <label for="mail1">E-mail:</label>
+    <input type="email" id="mail1" name="user_email">
+  </li>
+  <li>
+    <label for="msg1">Message:</label>
+    <textarea id="msg1" name="user_message"></textarea>
+  </li>
+ </script>
+ <script>
+ let form_list = document.getElementById("form_list")
+ function addForm(){
+  let input_html = document.getElementById('input_html').innerHTML
+  form_list.insertAdjacentHTML('beforeend', input_html);
+}
+
+document.getElementById("add_form_btn").addEventListener("click", addForm, false)
+addForm()
+</script>
